@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 function Ads(props) {
   return (
     <div className="ads-container">
@@ -10,5 +12,15 @@ function Ads(props) {
     </div>
   );
 }
+
+Ads.propTypes = {
+  title: PropTypes.string.IsRequired,
+  img: PropTypes.string,
+  content: PropTypes.string,
+  extraInfo: PropTypes.shape({
+    createdOn: PropTypes.instanceOf(Date),
+    author: PropTypes.string.IsRequired,
+  }),
+};
 
 export default Ads;
